@@ -10,7 +10,6 @@ import urllib
 def get_baidu_pic(keyWord,number=100):
     URL ="http://image.baidu.com/search/flip?tn=baiduimage"
     pageNum = int(number/60)+1
-    #print(pageNum)
     count = 1
     for page in range(pageNum+1):
         #URL = "http://image.baidu.com/search/flip?tn=baiduimage&pn=120&word="
@@ -18,8 +17,6 @@ def get_baidu_pic(keyWord,number=100):
         #print("[+]"+str(URL))
         html = requests.get(URL).text
         urls = re.findall('"objURL":"(.*?)",', html, re.S)
-        #print(urls)
-        #print(len(urls))
         for url in urls:
             # url = url.replace("\\","")
             #print(url)
