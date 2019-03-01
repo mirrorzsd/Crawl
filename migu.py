@@ -28,12 +28,9 @@ if __name__ =="__main__":
             break
 
     url = "http://www.migudm.cn/comic/"+str(id)+".html"
-    #print(id)
-    #print(url)
 
     #======================getChapNum===================
     page = requests.get(url).text
-    #print(page)
     chapterNum = re.findall('<span class="num">更新至(.*?)话</span>', page, re.S)
     #<span class="num">更新至134话</span>
     if not chapterNum:
